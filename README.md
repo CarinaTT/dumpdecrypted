@@ -37,13 +37,19 @@ Dumps decrypted mach-o files from encrypted `iPhone applications` or `app extens
 ```
 
 # Check
-$ otool -l your_mach-o_file | grep crypt  
+$ otool -l xxx.decrypted | grep crypt  
 
 ```
   cryptoff  16384
   cryptsize 294912
   cryptid   0
 ```
+
+Optional: lipo if you'd like   
+$ lipo -thin armv7 xxx.decrypted -output xxx_armv7.decrypted  
+$ lipo -thin armv64 xxx.decrypted -output xxx_arm64.decrypted
+
+
 
 # Credit
 
